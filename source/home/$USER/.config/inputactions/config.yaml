@@ -1,0 +1,143 @@
+❯ cat .config/inputactions/config.yaml 
+touchpad:
+  speed:
+    swipe_threshold: 8
+  delta_multiplier: 5
+  gestures:
+    - type: hold
+      fingers: 3
+      actions:
+        - 'on': end
+          input:
+            - keyboard:
+                - leftalt+left
+    - type: hold
+      fingers: 4
+      actions:
+        - 'on': end
+          plasma_shortcut: 'plasmashell,activate application launcher'
+    - type: swipe
+      direction: any
+      fingers: 3
+      actions:
+        - 'on': begin
+          input:
+            - mouse: [ +left ]
+        - 'on': update
+          input:
+            - mouse: [ move_by_delta ]
+        - 'on': end_cancel
+          input:
+            - mouse: [ -left ]
+    - type: rotate
+      fingers: 4
+      direction: any
+      actions:
+        - 'on': update
+          interval: -10
+          command: pactl set-sink-volume @DEFAULT_SINK@ -5%
+        - 'on': update
+          interval: 10
+          command: pactl set-sink-volume @DEFAULT_SINK@ +5%
+    - type: swipe
+      fingers: 3
+      direction: left
+      actions:
+        - 'on': begin
+          input:
+            - keyboard:
+                - leftctrl+leftbrace
+          conditions:
+            - window_class: firefox
+        - 'on': begin
+          input:
+            - keyboard:
+                - backspace
+          conditions:
+            - window_class: dolphin
+    - type: swipe
+      fingers: 3
+      direction: right
+      actions:
+        - 'on': begin
+          input:
+            - keyboard:
+                - leftctrl+rightbrace
+          conditions:
+            - window_class: firefox
+        - 'on': begin
+          input:
+            - keyboard:
+                - leftalt+right
+          conditions:
+            - window_class: dolphin
+    - type: rotate
+      fingers: 3
+      direction: any
+      actions:
+        - 'on': begin
+          input:
+            - keyboard:
+                - +leftalt
+                - tab
+        - 'on': update
+          interval: 5
+          input:
+            - keyboard:
+                - leftshift+tab
+        - 'on': update
+          interval: -5
+          input:
+            - keyboard:
+                - tab
+        - 'on': end_cancel
+          input:
+            - keyboard:
+                - '-leftalt'
+##########################################
+#########################################
+    - type: swipe
+      fingers: 5
+      direction: up_down
+      speed: fast
+
+      actions:
+        - on: begin
+          input:
+            - keyboard: [ +leftmeta, a ]
+
+        - on: update
+          interval: -75
+          input:
+            - keyboard: [ leftshift+a ]
+
+        - on: update
+          interval: 75
+          input:
+            - keyboard: [ a ]
+
+        - on: end_cancel
+          input:
+            - keyboard: [ -leftmeta ]
+
+    # Quick window switching (up)
+    - type: swipe
+      fingers: 5
+      direction: up
+      speed: slow
+
+      actions:
+        - on: begin
+          input:
+            - keyboard: [ leftmeta+leftshift+a ]
+
+    # Quick window switching (down)
+    - type: swipe
+      fingers: 5
+      direction: down
+      speed: slow
+
+      actions:
+        - on: begin
+          input:
+            - keyboard: [ leftmeta+a ]

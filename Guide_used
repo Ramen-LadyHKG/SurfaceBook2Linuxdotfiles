@@ -1,0 +1,4 @@
+# 2026-APR-24
+# Zram
+[sudo vim /etc/systemd/zram-generator.conf](https://www.tf4.fun/posts/arch-linux-setup-zram/)
+[`vm.swappiness=10`](https://medium.com/@lohaniprateek/arch-linux-ram-memory-optimization-with-zram-84b25435f2f3)

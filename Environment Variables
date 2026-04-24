@@ -1,0 +1,14 @@
+# /etc/environment
+MOZ_ENABLE_WAYLAND=1
+
+# https://www.facebook.com/groups/2735164529858645?multi_permalinks=25471981759083599&hoisted_section_header_type=recently_seen
+FLATPAK_SYSTEM_DIR="/flatpak-installs/"
+FLATPAK_SYSTEM_CACHE_DIR="/flatpak-cache/"
+PLASMA_USE_QT_SCALING=1
+KWIN_DRM_NO_AMS=1
+KWIN_FORCE_TRIPLE_BUFFERING=1
+
+
+
+# For FireFox about:config
+widget.wayland.vsync.enabled #fixes KDE Plasma 6 Wayland Blur high GPU usage
